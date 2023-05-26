@@ -14,15 +14,13 @@ void main()
         body: Align(
           alignment: Alignment(0,0),
           child: Container(
-            child: Center(
+            alignment: Alignment(0,-3.05),
               child: Text(
-
                 "🔥",
                 style: TextStyle(
                   fontSize: 55,
                 ),
               ),
-            ),
             height: 200,
             width: 150,
             decoration: BoxDecoration(
