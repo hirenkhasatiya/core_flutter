@@ -20,6 +20,7 @@ void main()
                 style: TextStyle(
                   letterSpacing: -30,
                   fontSize: 85,
+                  color: Colors.black12
                 ),
               ),
             ),
