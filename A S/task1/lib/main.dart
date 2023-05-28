@@ -1,43 +1,45 @@
 import 'package:flutter/material.dart';
 
-void main()
-{
+void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.green,
-            title: const Text("My App"),
-            centerTitle: true,
-          ),
-        body: Align(
-          alignment: Alignment(0,0),
-          child: Container(
-            child: Center(
-              child: Text(
-                "OOOO",
-                style: TextStyle(
-                  letterSpacing: -30,
-                  fontSize: 85,
-                ),
-              ),
-            ),
-            height: 200,
-            width: 200,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.green,
-                width: 25,
-              ),
-              color: Colors.greenAccent
-
-            ),
-
-            ),
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.green,
+          title: Text("Launch Button"),
+          centerTitle: true,
         ),
-        backgroundColor: Colors.lightGreen,
+        body: Align(
+          alignment: Alignment.center,
+          child: Container(
+            height: 150,
+            width: 150,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              shape: BoxShape.circle,
+              border: Border.all(width: 1.5, color: Colors.white),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.green,
+                  blurRadius: 20,
+                  spreadRadius: 10,
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text("GO", style:
+              TextStyle(
+                  color: Colors.white,
+                  fontSize: 20
+              ),
+              ),
+            ),
+          ),
+        ),
       ),
     ),
   );
 }
+
