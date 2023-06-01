@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -38,15 +40,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Clr"),
-        actions: [
-          Align(
-            alignment: AlignmentDirectional.centerStart,
-            child: Icon(
-              Icons.menu,
-            ),
-          ),
-        ],
+        title: const Text("Calc"),
+        leading: Icon(
+          Icons.menu,
+        ),
         centerTitle: true,
         backgroundColor: Colors.blue,
       ),
@@ -57,14 +54,15 @@ class _MyAppState extends State<MyApp> {
             Align(
               alignment: Alignment.topCenter,
               child: Container(
-                height: 60,
-                width: 130,
+                height: 100,
+                width: 190,
+                margin: EdgeInsets.all(5),
                 child: Align(
                   child: Text(
                     "$counter",
                     style: TextStyle(
                       color: Colors.black26,
-                      fontSize: 65,
+                      fontSize: 90,
                     ),
                   ),
                 ),
@@ -74,11 +72,7 @@ class _MyAppState extends State<MyApp> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Ink(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15)
-                  ),
                   child: InkWell(
-
                     onTap: () {
                       setState(() {
                         counter-=2;
@@ -88,7 +82,11 @@ class _MyAppState extends State<MyApp> {
                     child: Container(
                       height: 70,
                       width: 140,
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
                       color: Colors.blue,
+                      ),
                       child: Align(
                         child: Text(
                           "-2",
@@ -102,9 +100,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 Ink(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15)
-                  ),
+                
                   child: InkWell(
                     onTap: () {
                       setState(() {
@@ -115,7 +111,11 @@ class _MyAppState extends State<MyApp> {
                     child: Container(
                       height: 70,
                       width: 140,
-                      color: Colors.blue,
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.blue,
+                      ),
                       child: Align(
                         child: Text(
                           "+2",
@@ -134,9 +134,7 @@ class _MyAppState extends State<MyApp> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Ink(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15)
-                  ),
+
                   child: InkWell(
                     onTap: () {
                       setState(() {
@@ -147,7 +145,11 @@ class _MyAppState extends State<MyApp> {
                     child: Container(
                       height: 70,
                       width: 140,
-                      color: Colors.blue,
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.blue,
+                      ),
                       child: Align(
                         child: Text(
                           "-4",
@@ -161,9 +163,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 Ink(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15)
-                  ),
+
                   child: InkWell(
                     onTap: () {
                       setState(() {
@@ -174,7 +174,11 @@ class _MyAppState extends State<MyApp> {
                     child: Container(
                       height: 70,
                       width: 140,
-                      color: Colors.blue,
+                      margin: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.blue,
+                      ),
                       child: Align(
                         child: Text(
                           "+4",
@@ -190,20 +194,22 @@ class _MyAppState extends State<MyApp> {
               ],
             ),
             Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-              ),
+
               child: InkWell(
                 onTap: () {
                   setState(() {
-                    counter*=0;
+                    counter=0;
                     print("$counter");
                   });
                 },
                 child: Container(
                   height: 70,
                   width: 140,
-                  color: Colors.blue,
+                  margin: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.blue,
+                  ),
                   child: Align(
                     child: Text(
                       "clear",
