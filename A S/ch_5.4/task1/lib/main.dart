@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Align(
               alignment: Alignment.topCenter,
@@ -62,12 +62,13 @@ class _MyAppState extends State<MyApp> {
                     "$counter",
                     style: TextStyle(
                       color: Colors.black26,
-                      fontSize: 90,
+                      fontSize: 100,
                     ),
                   ),
                 ),
               ),
             ),
+            SizedBox(height: 100,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -100,7 +101,6 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
                 Ink(
-                
                   child: InkWell(
                     onTap: () {
                       setState(() {
@@ -130,6 +130,7 @@ class _MyAppState extends State<MyApp> {
                 ),
               ],
             ),
+            SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -193,8 +194,8 @@ class _MyAppState extends State<MyApp> {
                 ),
               ],
             ),
+            SizedBox(height: 20),
             Ink(
-
               child: InkWell(
                 onTap: () {
                   setState(() {

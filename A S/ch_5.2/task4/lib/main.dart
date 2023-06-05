@@ -25,7 +25,7 @@ void main() {
               ),
               shape: BoxShape.rectangle,
               border: Border.all(width: 1.5, color: Colors.white),
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(35),
             ),
             child: Center(
               child: Text("Flutter", style:
