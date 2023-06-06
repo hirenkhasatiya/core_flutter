@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         backgroundColor: myBg,
         foregroundColor: Colors.black,
-        elevation: 0,
+        elevation: 2,
         actions: const [
           Icon(Icons.shopping_cart,color: Colors.white),
           SizedBox(
@@ -128,7 +128,8 @@ class _HomePageState extends State<HomePage> {
 
             CircleAvatar(
               radius: 100,
-              foregroundImage: AssetImage(n1),
+              backgroundImage: AssetImage(imagePath+allImages[2]),
+              // foregroundImage: NetworkImage(n2),
             ),
           ],
         ),
