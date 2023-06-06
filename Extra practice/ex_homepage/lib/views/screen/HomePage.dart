@@ -1,3 +1,5 @@
+import 'package:ex_homepage/utils/image_utils.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:ex_homepage/utils/color_utils.dart';
 import 'package:ex_homepage/utils/product_utils.dart';
 import 'package:flutter/material.dart';
@@ -14,17 +16,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Page"),
+        title: const Text(
+            "Home Page",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: myBg,
         foregroundColor: Colors.black,
         elevation: 0,
         actions: const [
-          Icon(Icons.shopping_cart),
+          Icon(Icons.shopping_cart,color: Colors.white),
           SizedBox(
             width: 10,
           ),
         ],
+        flexibleSpace: Image.network(n1,fit: BoxFit.cover),
       ),
       body: Padding(
         padding: const EdgeInsets.all(18),
@@ -68,6 +77,10 @@ class _HomePageState extends State<HomePage> {
                           flex: 2,
                           child: Container(
                             decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(pro['thumbnail']),
+                                fit: BoxFit.cover,
+                              ),
                               color: Colors.grey.shade400,
                               borderRadius: BorderRadius.vertical(
                                 top: Radius.circular(30),
@@ -88,7 +101,16 @@ class _HomePageState extends State<HomePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(pro['title']),
-                                Text(pro['brand']),
+                                RatingBarIndicator(
+                                  rating: double.parse(pro['rating'].toString()),
+                                  itemCount: 5,
+                                  itemSize: 20,
+                                  direction: Axis.horizontal,
+                                  itemBuilder: (context, index) => const Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -99,6 +121,14 @@ class _HomePageState extends State<HomePage> {
                 )
                     .toList(),
               ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+
+            CircleAvatar(
+              radius: 100,
+              foregroundImage: AssetImage(n1),
             ),
           ],
         ),
