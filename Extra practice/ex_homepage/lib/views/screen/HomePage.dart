@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text(
             "Home Page",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -29,12 +29,12 @@ class _HomePageState extends State<HomePage> {
         foregroundColor: Colors.black,
         elevation: 2,
         actions: const [
-          Icon(Icons.shopping_cart,color: Colors.white),
+          Icon(Icons.shopping_cart,color: Colors.black),
           SizedBox(
             width: 10,
           ),
         ],
-        flexibleSpace: Image.asset(imagePath+f4,fit: BoxFit.cover,),
+        // flexibleSpace: Image.asset(imagePath+f4,fit: BoxFit.cover,),
       ),
       body: Padding(
         padding: const EdgeInsets.all(18),
@@ -60,10 +60,14 @@ class _HomePageState extends State<HomePage> {
                       (pro) => GestureDetector(
                     onTap: () {
                       Route route = MaterialPageRoute(
-                        builder: (context) => const DetailPage(),
+                        builder: (context) => DetailPage(
+                          title: pro['title'],
+                          price: pro['price'],
+                        ),
                       );
 
                       Navigator.of(context).push(route);
+
                     },
                         child: Container(
                     height: 280,
