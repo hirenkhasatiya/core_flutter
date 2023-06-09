@@ -18,9 +18,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-
-
-  late Color iconcolor;
+  int a=0;
+  Color? color;
 
   @override
   void initState() {
@@ -29,8 +28,7 @@ class _MyAppState extends State<MyApp> {
 
   void increase() {
     setState(() {
-
-      iconcolor;
+      color;
     });
   }
 
@@ -56,9 +54,9 @@ class _MyAppState extends State<MyApp> {
                 ),
                 child: Align(
                   child: Text(
-                    "$iconcolor",
+                    "hello",
                     style: TextStyle(
-                      color: Colors.black26,
+                      color: color,
                       fontSize: 100,
                     ),
                   ),
@@ -84,65 +82,82 @@ class _MyAppState extends State<MyApp> {
             ),
             Column(
               children: [
-                 SingleChildScrollView(
-                   scrollDirection: Axis.horizontal,
-                     physics: BouncingScrollPhysics(),
-                     child: Row(
-                       children: [
-                         Ink(
-                           decoration: BoxDecoration(
-                               color: Colors.blue,
-                               borderRadius: BorderRadius.circular(10)
-                           ),
-                           child: InkWell(
-                             onTap:(){
-                               child: Container(
-                                 height: 100,
-                                 width: 100,
-                                 margin: EdgeInsets.all(10),
-                               );
-                             },
-                           ),
-                         ),
-                         Container(
-                           height: 100,
-                           width: 100,
-                           margin: EdgeInsets.all(10),
-                           decoration: BoxDecoration(
-                               color: Colors.red,
-                               borderRadius: BorderRadius.circular(10)
-                           ),
-                         ),
-                         Container(
-                           height: 100,
-                           width: 100,
-                           margin: EdgeInsets.all(10),
-                           decoration: BoxDecoration(
-                               color: Colors.black,
-                               borderRadius: BorderRadius.circular(10)
-                           ),
-                         ),
-                         Container(
-                           height: 100,
-                           width: 100,
-                           margin: EdgeInsets.all(10),
-                           decoration: BoxDecoration(
-                               color: Colors.green,
-                               borderRadius: BorderRadius.circular(10)
-                           ),
-                         ),
-                         Container(
-                           height: 100,
-                           width: 100,
-                           margin: EdgeInsets.all(10),
-                           decoration: BoxDecoration(
-                               color: Colors.yellow,
-                               borderRadius: BorderRadius.circular(10)
-                           ),
-                         ),
-                       ],
-                     ),
+                 Container(
+                   height: 150,
+                   width: 380,
+                   margin: EdgeInsets.all(10),
+                   decoration: BoxDecoration(
+                   color: Colors.black12,
+                     borderRadius: BorderRadius.circular(10)
                    ),
+                   child: SingleChildScrollView(
+                     scrollDirection: Axis.horizontal,
+                       physics: BouncingScrollPhysics(),
+                       child: Row(
+                         children: [
+                           GestureDetector(
+                             onTap: (){
+                               a=1;
+                               if(a==1)
+                                 {
+                                   color=Colors.red;
+                                 }
+                               },
+                             child: Container(
+                               height: 100,
+                               width: 100,
+                               margin: EdgeInsets.all(10),
+                               decoration: BoxDecoration(
+                                   color: color=Colors.red,
+                                   borderRadius: BorderRadius.circular(10)
+                               ),
+                             ),
+                           ),
+                           GestureDetector(
+                             onTap: () {
+                               a=2;
+                               if(a==2)
+                                 {
+                                   color = Colors.black;
+                                 }
+                             },
+                             child: Container(
+                               height: 100,
+                               width: 100,
+                               margin: EdgeInsets.all(10),
+                               decoration: BoxDecoration(
+                                   color: color = Colors.black,
+                                   borderRadius: BorderRadius.circular(10)
+                               ),
+                             ),
+                           ),
+                           GestureDetector(
+                             onTap: () {
+
+                             },
+                             child: Container(
+                               height: 100,
+                               width: 100,
+                               margin: EdgeInsets.all(10),
+                               decoration: BoxDecoration(
+                                   color: color = Colors.green,
+                                   borderRadius: BorderRadius.circular(10)
+                               ),
+                             ),
+                           ),
+                           Container(
+                             height: 100,
+                             width: 100,
+                             margin: EdgeInsets.all(10),
+                             decoration: BoxDecoration(
+                                 color: Colors.yellow,
+                                 borderRadius: BorderRadius.circular(10)
+                             ),
+                           ),
+                         ],
+                       ),
+                     ),
+                 ),
                 Container(
                   width: 390,
                   height: 50,
@@ -160,87 +175,95 @@ class _MyAppState extends State<MyApp> {
                       borderRadius: BorderRadius.circular(10)
                   ),
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  physics: BouncingScrollPhysics(),
-                  child: Row(
-                    children: [
-                      Ink(
-                        child: InkWell(
-                          onTap: (){
-                            child: Container(
-                              height: 100,
-                              width: 100,
-                              child: Icon(Icons.alarm,size: 50),
-                              margin: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10)
-                              ),
-                            );
-                          },
-                        ),
+                Container(
+                  height: 150,
+                  width: 380,
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                  color: Colors.black12,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: BouncingScrollPhysics(),
+                    child: Row(
+                      children: [
+                      GestureDetector(
+                        onTap: () {
+
+                        },
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Icon(Icons.alarm,size: 50),
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                          ),
                       ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        child: Icon(Icons.call,size: 50),
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
+                        Container(
+                          height: 100,
+                          width: 100,
+                          child: Icon(Icons.call,size: 50),
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                        ),Container(
+                          height: 100,
+                          width: 100,
+                          child: Icon(Icons.search,size: 50),
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          child: Icon(Icons.navigate_next,size: 50),
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          child: Icon(Icons.arrow_back_ios_rounded,size: 50),
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          child: Icon(Icons.circle_notifications,size: 50),
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                        ),
+                        Container(
+                          height: 100,
+                          width: 100,
+                          child: Icon(Icons.add,size: 50),
+                          margin: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
                             color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
+                              borderRadius: BorderRadius.circular(10)
+                          ),
                         ),
-                      ),Container(
-                        height: 100,
-                        width: 100,
-                        child: Icon(Icons.search,size: 50),
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        child: Icon(Icons.navigate_next,size: 50),
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        child: Icon(Icons.arrow_back_ios_rounded,size: 50),
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        child: Icon(Icons.circle_notifications,size: 50),
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                      ),
-                      Container(
-                        height: 100,
-                        width: 100,
-                        child: Icon(Icons.add,size: 50),
-                        margin: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],

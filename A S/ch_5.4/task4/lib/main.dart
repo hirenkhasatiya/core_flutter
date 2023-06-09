@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +21,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int counter = 0;
 
-  Color appbarBg = Colors.amber;
   @override
   void initState() {
     super.initState();
@@ -35,12 +36,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Calc"),
-        actions: [
-          Icon(Icons.add),
-        ],
+        title: const Text("Dynamic List"),
+
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blue.shade900,
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -50,15 +49,56 @@ class _MyAppState extends State<MyApp> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children:List.generate(counter, (index) => Container(
               margin: EdgeInsets.all(5),
-              height: 60,
+              height: 100,
+              decoration: BoxDecoration(
+              color: Colors.primaries[
+                index % 2 +4
+              ].shade600,
+                borderRadius: BorderRadius.circular(10)
+              ),
               alignment: Alignment.center,
-              color: Colors.lightBlue,
-              child: Text("${index+1}"),
-            ),growable: true,
+              child: Text(
+                  "${index+1}",
+                style: TextStyle(
+                  fontSize: 28,
+                  color: Colors.white
+                ),
+              ),
+            ),
             ),
           ),
         ),
       ),
+        floatingActionButton: Padding(
+          padding: EdgeInsets.only(left: 260),
+          child: Row(
+            children: [
+              FloatingActionButton(
+                backgroundColor:  Colors.blue.shade900,
+                onPressed: () {
+                  setState(() {
+                    counter++;
+                  });
+                },
+                child: const Icon(
+                  Icons.add,
+                ),
+              ),
+              SizedBox(width: 10,),
+              FloatingActionButton(
+                backgroundColor:  Colors.blue.shade900,
+                onPressed: () {
+                  setState(() {
+                    counter--;
+                  });
+                },
+                child: const Icon(
+                  Icons.remove,
+                ),
+              ),
+            ],
+          ),
+        ),
     );
   }
 }
