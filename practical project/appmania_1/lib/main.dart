@@ -1,3 +1,6 @@
+import 'package:appmania_1/utils/RoutesUtils.dart';
+import 'package:appmania_1/views/Screen/CartPage.dart';
+import 'package:appmania_1/views/Screen/DetailPage.dart';
 import 'package:appmania_1/views/Screen/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // routes: {
+      //   MyRoutes.home: (context) => const HomePage(),
+      //   MyRoutes.detailPage: (context) => const DetailPage(),
+      //   MyRoutes.cartPage: (context) =>  const CartPage(),
+      // },
     );
   }
 }
