@@ -2,6 +2,7 @@ import 'package:appmania_1/views/Screen/DetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:appmania_1/views/component/MyBackBotton.dart';
 import 'package:appmania_1/utils/ProductUtils.dart';
+import 'package:appmania_1/views/Screen/CartPage.dart';
 import 'package:appmania_1/utils/RoutesUtils.dart';
 
 class CategoryTile extends StatelessWidget {
@@ -12,6 +13,7 @@ class CategoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     Size s = MediaQuery.of(context).size;
     double h = s.height;
     double w = s.width;
@@ -40,95 +42,90 @@ class CategoryTile extends StatelessWidget {
                 children: allProducts1
                     .map(
                       (pro) => (pro['category'] == category)
-                          ?(min <= pro['price'] && pro['price'] <= max)
-                          ?GestureDetector(
-                        onTap: (){
-                          Navigator.of(context).pushNamed(MyRoutes.detailPage, arguments: pro);
-                        },
-                        child: Container(
-                          height: h * 0.35,
-                          width: w * 0.42,
-                          margin: EdgeInsets.only(bottom: 20),
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade100,
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 3,
-                                color: Colors.grey.shade500,
-                                offset: Offset(1,1),
-                              ),
-                            ],
+                      ?(min <= pro['price'] && pro['price'] <= max)
+                      ?GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).pushNamed(MyRoutes.detailPage, arguments: pro);
+                    },
+                    child: Container(
+                      height: h * 0.35,
+                      width: w * 0.42,
+                      margin: EdgeInsets.only(bottom: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            blurRadius: 3,
+                            color: Colors.grey.shade500,
+                            offset: Offset(1,1),
                           ),
-                          padding: EdgeInsets.only(top: 30),
-                          child: Column(
-                            children: [
-                              CircleAvatar(
-                                radius: 80,
-                                foregroundImage: NetworkImage(pro['thumbnail']),
+                        ],
+                      ),
+                      padding: EdgeInsets.only(top: 30),
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 80,
+                            foregroundImage: NetworkImage(pro['thumbnail']),
+                          ),
+                          SizedBox(
+                            height: 42,
+                          ),
+                          Align(
+                            alignment: Alignment(-0.7,0),
+                            child: Text(pro['title'],
+                              style: TextStyle(
+                                fontSize: 14,
+                                overflow: TextOverflow.ellipsis,
+                                fontWeight: FontWeight.w600,
                               ),
-                              // Container(
-                              //   height: h * 0.26,
-                              //   width: w * 0.60,
-                              //   decoration: BoxDecoration(
-                              //     color: Colors.white,
-                              //     borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                              //     image: DecorationImage(
-                              //       image: NetworkImage(pro['thumbnail']),
-                              //       fit: BoxFit.fill,
-                              //     ),
-                              //   ),
-                              // ),
-                              SizedBox(
-                                height: 42,
-                              ),
-                              Align(
-                                alignment: Alignment(-0.7,0),
-                                child: Text(pro['title'],
+                            ),
+                          ),
+                          SizedBox(height: 10,),
+                          Stack(
+                              children:[ Align(
+                                alignment: Alignment(-0.90,0),
+                                child: Text("\$ ${pro['price']}".toString(),
                                   style: TextStyle(
-                                    fontSize: 14,
-                                    overflow: TextOverflow.ellipsis,
-                                    fontWeight: FontWeight.w600,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10,),
-                              Stack(
-                                children:[ Align(
-                                  alignment: Alignment(-0.90,0),
-                                  child: Text("\$ ${pro['price']}".toString(),
-                                    style: TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold
-                                    ),
-                                  ),
-                                ),
-                                  Align(
-                                    alignment: AlignmentDirectional.bottomEnd,
+                                Align(
+                                  alignment: AlignmentDirectional.bottomEnd,
+                                  child: GestureDetector(
+                                    onTap: (){
+                                      if (!cartItems.contains(pro)) {
+                                        cartItems.add(pro);
+                                      }
+                                    },
                                     child: Container(
                                       height: 40.5,
                                       width: 40,
                                       decoration: BoxDecoration(
-                                      color: Colors.brown,
-                                        borderRadius:BorderRadius.only(
-                                          topLeft: Radius.circular(20),
+                                          color: Colors.brown,
+                                          borderRadius:BorderRadius.only(
+                                            topLeft: Radius.circular(20),
                                             bottomRight: Radius.circular(20),
-                                        )
+                                          )
                                       ),
-                                     child: Icon(
-                                       Icons.add,
-                                       color: Colors.white,
-                                     ),
+                                      child: Icon(
+                                        Icons.add,
+                                        color: Colors.white,
+                                      ),
                                     ),
-                                  )
-                                ]
-                              ),
-                            ],
+                                  ),
+                                )
+                              ]
                           ),
-                        ),
-                      )
-                  : Container()
-                  : Container(),
+                        ],
+                      ),
+                    ),
+                  )
+                      : Container()
+                      : Container(),
                 ).toList(),
               ),
               SizedBox(width: 25,),
@@ -156,23 +153,15 @@ class CategoryTile extends StatelessWidget {
                           ),
                         ],
                       ),
-                      //padding: EdgeInsets.only(top: 1),
+                      padding: EdgeInsets.only(top: 30),
                       child: Column(
                         children: [
-                          Container(
-                            height: h * 0.26,
-                            width: w * 0.60,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-                              image: DecorationImage(
-                                image: NetworkImage(pro['thumbnail']),
-                                fit: BoxFit.fill,
-                              ),
-                            ),
+                          CircleAvatar(
+                            radius: 80,
+                            foregroundImage: NetworkImage(pro['thumbnail']),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 42,
                           ),
                           Align(
                             alignment: Alignment(-0.7,0),
@@ -197,19 +186,33 @@ class CategoryTile extends StatelessWidget {
                               ),
                                 Align(
                                   alignment: AlignmentDirectional.bottomEnd,
-                                  child: Container(
-                                    height: 40.5,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                        color: Colors.brown,
-                                        borderRadius:BorderRadius.only(
-                                          topLeft: Radius.circular(20),
-                                          bottomRight: Radius.circular(20),
-                                        )
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Colors.white,
+                                  child: GestureDetector(
+                                    onTap: (){
+                                      if (!cartItems.contains(pro)) {
+                                        cartItems.add(pro);
+                                      }
+                                    },
+                                    child: GestureDetector(
+                                      onTap: (){
+                                        if (!cartItems.contains(pro)) {
+                                          cartItems.add(pro);
+                                        }
+                                      },
+                                      child: Container(
+                                        height: 40.5,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                            color: Colors.brown,
+                                            borderRadius:BorderRadius.only(
+                                              topLeft: Radius.circular(20),
+                                              bottomRight: Radius.circular(20),
+                                            )
+                                        ),
+                                        child: Icon(
+                                          Icons.add,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 )

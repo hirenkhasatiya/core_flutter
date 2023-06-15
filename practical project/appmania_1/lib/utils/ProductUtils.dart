@@ -1,8 +1,8 @@
 List<Map> allProducts1 = [
   {
     "id": 1,
-    "title": "Delicacies Indulgent Chocolate",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "title": "Delicacies Chocolate",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 200,
     "discountPercentage": 17.94,
@@ -20,8 +20,8 @@ List<Map> allProducts1 = [
   },
   {
     "id": 2,
-    "title": "Freshly Chocolate Covered Nuts",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "title": "Freshly Chocolate ",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 300,
     "discountPercentage": 17.94,
@@ -38,7 +38,7 @@ List<Map> allProducts1 = [
   {
     "id": 3,
     "title": "Freshly Chocolate",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 380,
     "discountPercentage": 17.94,
@@ -54,8 +54,8 @@ List<Map> allProducts1 = [
   },
   {
     "id": 4,
-    "title": "Freshly Chocolate Covered Nuts",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "title": "Freshly Chocolate",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 210,
     "discountPercentage": 17.94,
@@ -71,8 +71,8 @@ List<Map> allProducts1 = [
   },
   {
     "id": 5,
-    "title": "Freshly Chocolate Covered Nuts",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "title": "Freshly Chocolate",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 30,
     "discountPercentage": 17.94,
@@ -88,8 +88,8 @@ List<Map> allProducts1 = [
   },
   {
     "id": 6,
-    "title": "Freshly Chocolate Covered Nuts",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "title": "Freshly Chocolate",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 280,
     "discountPercentage": 17.94,
@@ -108,7 +108,7 @@ List<Map> allProducts2 = [
   {
     "id": 1,
     "title": "Chocolate Cup",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 320,
     "discountPercentage": 17.94,
@@ -127,7 +127,7 @@ List<Map> allProducts2 = [
   {
     "id": 2,
     "title": "Covered Nuts",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 250,
     "discountPercentage": 17.94,
@@ -144,7 +144,7 @@ List<Map> allProducts2 = [
   {
     "id": 3,
     "title": "Chocolate biskut",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 500,
     "discountPercentage": 17.94,
@@ -161,7 +161,7 @@ List<Map> allProducts2 = [
   {
     "id": 4,
     "title": "chocolate Butter Cups",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 200,
     "discountPercentage": 17.94,
@@ -178,7 +178,7 @@ List<Map> allProducts2 = [
   {
     "id": 5,
     "title": "Fruit Chocolate Nuts",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 78,
     "discountPercentage": 17.94,
@@ -194,8 +194,8 @@ List<Map> allProducts2 = [
   },
   {
     "id": 6,
-    "title": "Freshly Chocolate Covered Nuts",
-    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months",
+    "title": "Freshly Chocolate cup",
+    "description": "Name : Freshly Chocolate Covered Nuts(Best Before) : 6 Months a food made from roasted and ground cacao seed kernels that is available as a liquid, solid, or paste, either on its own or as a flavoring agent in other foods.",
     "NetQuantity": 1,
     "price": 350,
     "discountPercentage": 17.94,

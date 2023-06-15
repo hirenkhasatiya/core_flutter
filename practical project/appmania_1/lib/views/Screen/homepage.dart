@@ -176,6 +176,7 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(18),
                 child: SingleChildScrollView(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(

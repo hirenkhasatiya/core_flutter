@@ -3,6 +3,7 @@ import 'package:appmania_1/utils/RoutesUtils.dart';
 import 'package:appmania_1/views/component/MyBackBotton.dart';
 import 'package:flutter/material.dart';
 import 'package:appmania_1/utils/ProductUtils.dart';
+import 'package:appmania_1/views/Screen/DetailPage.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -25,6 +26,7 @@ class _CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
+
     Size size = MediaQuery.of(context).size;
     double h = size.height;
     double w = size.width;
@@ -39,7 +41,17 @@ class _CartPageState extends State<CartPage> {
         elevation: 0,
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.only(
+              right: 15
+            ),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushNamedAndRemoveUntil(MyRoutes.home, (route) => false);
+                },
+                  child: Icon(
+                      Icons.home
+                  ),
+              ),
           ),
         ],
       ),
@@ -48,6 +60,7 @@ class _CartPageState extends State<CartPage> {
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
               child: Column(
                 children: cartItems
                     .map(
@@ -78,10 +91,24 @@ class _CartPageState extends State<CartPage> {
                           height: h * 0.15,
                           padding: const EdgeInsets.all(8),
                           child: Column(
+
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(e['title']),
-                              Text("\$ ${e['price']}"),
+                              Text(
+                                  e['title'],
+                                  overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold
+                                ),
+                              ),
+                              SizedBox(height: 30,),
+                              Text(
+                                  "\$ ${e['price']}",
+                                  style: TextStyle(
+                                    fontSize: 16
+                                  )
+                              ),
                               Spacer(),
                               GestureDetector(
                                 onTap: () {
@@ -93,7 +120,7 @@ class _CartPageState extends State<CartPage> {
                                 child: Text(
                                   "DELETE",
                                   style: TextStyle(
-                                    color: Colors.red,
+                                    color: Colors.brown,
                                     decoration: TextDecoration.underline,
                                     fontSize: 18,
                                   ),
@@ -114,7 +141,7 @@ class _CartPageState extends State<CartPage> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: h * 0.1,
-              color: Colors.red,
+              color: Colors.brown,
               alignment: Alignment.center,
               padding: const EdgeInsets.all(20),
               child: Row(
