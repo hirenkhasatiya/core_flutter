@@ -18,8 +18,8 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
-  int a=0;
-  Color? color;
+  Color? cl;
+  Icon? icon;
 
   @override
   void initState() {
@@ -28,7 +28,8 @@ class _MyAppState extends State<MyApp> {
 
   void increase() {
     setState(() {
-      color;
+      icon;
+      cl;
     });
   }
 
@@ -52,15 +53,7 @@ class _MyAppState extends State<MyApp> {
                 color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Align(
-                  child: Text(
-                    "hello",
-                    style: TextStyle(
-                      color: color,
-                      fontSize: 100,
-                    ),
-                  ),
-                ),
+                child: icon,
               ),
             ),
             Container(
@@ -97,61 +90,66 @@ class _MyAppState extends State<MyApp> {
                          children: [
                            GestureDetector(
                              onTap: (){
-                               a=1;
-                               if(a==1)
-                                 {
-                                   color=Colors.red;
-                                 }
+                               setState(() {
+                                 cl=Colors.red;
+                               });
                                },
                              child: Container(
                                height: 100,
                                width: 100,
                                margin: EdgeInsets.all(10),
                                decoration: BoxDecoration(
-                                   color: color=Colors.red,
+                                   color: Colors.red,
                                    borderRadius: BorderRadius.circular(10)
                                ),
                              ),
                            ),
                            GestureDetector(
                              onTap: () {
-                               a=2;
-                               if(a==2)
-                                 {
-                                   color = Colors.black;
-                                 }
+                               setState(() {
+                                 cl=Colors.black;
+                               });
                              },
                              child: Container(
                                height: 100,
                                width: 100,
                                margin: EdgeInsets.all(10),
                                decoration: BoxDecoration(
-                                   color: color = Colors.black,
+                                   color: Colors.black,
                                    borderRadius: BorderRadius.circular(10)
                                ),
                              ),
                            ),
                            GestureDetector(
                              onTap: () {
-
+                               setState(() {
+                                 cl=Colors.deepPurple;
+                               });
                              },
                              child: Container(
                                height: 100,
                                width: 100,
                                margin: EdgeInsets.all(10),
                                decoration: BoxDecoration(
-                                   color: color = Colors.green,
+                                   color: Colors.deepPurple,
                                    borderRadius: BorderRadius.circular(10)
                                ),
                              ),
                            ),
-                           Container(
-                             height: 100,
-                             width: 100,
-                             margin: EdgeInsets.all(10),
-                             decoration: BoxDecoration(
-                                 color: Colors.yellow,
-                                 borderRadius: BorderRadius.circular(10)
+                           GestureDetector(
+                             onTap: () {
+                               setState(() {
+                                 cl=Colors.brown;
+                               });
+                             },
+                             child: Container(
+                               height: 100,
+                               width: 100,
+                               margin: EdgeInsets.all(10),
+                               decoration: BoxDecoration(
+                                   color: Colors.brown,
+                                   borderRadius: BorderRadius.circular(10)
+                               ),
                              ),
                            ),
                          ],
@@ -190,7 +188,9 @@ class _MyAppState extends State<MyApp> {
                       children: [
                       GestureDetector(
                         onTap: () {
-
+                          setState(() {
+                            icon=Icon(Icons.alarm,color: cl,size: 150,);
+                          });
                         },
                           child: Container(
                             height: 100,
@@ -203,63 +203,106 @@ class _MyAppState extends State<MyApp> {
                             ),
                           ),
                       ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          child: Icon(Icons.call,size: 50),
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
-                          ),
-                        ),Container(
-                          height: 100,
-                          width: 100,
-                          child: Icon(Icons.search,size: 50),
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              icon=Icon(Icons.call,color: cl,size: 150,);
+                            });
+                          },
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Icon(Icons.call,size: 50),
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
                           ),
                         ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          child: Icon(Icons.navigate_next,size: 50),
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              icon=Icon(Icons.search,color: cl,size: 150,);
+                            });
+                          },
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Icon(Icons.search,size: 50),
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
                           ),
                         ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          child: Icon(Icons.arrow_back_ios_rounded,size: 50),
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              icon=Icon(Icons.arrow_forward_ios_rounded,color: cl,size: 150,);
+                            });
+                          },
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Icon(Icons.arrow_forward_ios_rounded,size: 50),
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
                           ),
                         ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          child: Icon(Icons.circle_notifications,size: 50),
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              icon=Icon(Icons.arrow_back_ios_rounded,color: cl,size: 150,);
+                            });
+                          },
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Icon(Icons.arrow_back_ios_rounded,size: 50),
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
                           ),
                         ),
-                        Container(
-                          height: 100,
-                          width: 100,
-                          child: Icon(Icons.add,size: 50),
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              icon=Icon(Icons.circle_notifications,color: cl,size: 150,);
+                            });
+                          },
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Icon(Icons.circle_notifications,size: 50),
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              icon=Icon(Icons.add,color: cl,size: 150,);
+                            });
+                          },
+                          child: Container(
+                            height: 100,
+                            width: 100,
+                            child: Icon(Icons.add,size: 50),
+                            margin: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                                borderRadius: BorderRadius.circular(10)
+                            ),
                           ),
                         ),
                       ],
