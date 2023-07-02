@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> {
                         builder: (context) => DetailPage(
                           title: pro['title'],
                           price: pro['price'],
+                          stock: pro['stock'],
                         ),
                       );
 
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             blurRadius: 1,
                             color: Colors.grey,
@@ -95,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                                   fit: BoxFit.cover,
                                 ),
                                 color: Colors.grey.shade400,
-                                borderRadius: BorderRadius.vertical(
+                                borderRadius: const BorderRadius.vertical(
                                   top: Radius.circular(30),
                                 ),
                               ),
@@ -103,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Expanded(
                             child: Container(
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.vertical(
                                   bottom: Radius.circular(30),
                                 ),
