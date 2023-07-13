@@ -1,3 +1,4 @@
+import 'package:clock_app/views/screen/clockPage.dart';
 import 'package:clock_app/views/screen/inboxPage.dart';
 import 'package:flutter/material.dart';
 import 'package:clock_app/views/screen/HomePage.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MyRoutes.home: (context) => const HomePage(),
         MyRoutes.inbox: (context) => const InboxPage(),
+        MyRoutes.Clock: (context) => const ClockPage(),
       },
     );
   }
